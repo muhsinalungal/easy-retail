@@ -1,2 +1,1 @@
-# easy-retail
-Easy Retail POS
+# Easy Retail POS
