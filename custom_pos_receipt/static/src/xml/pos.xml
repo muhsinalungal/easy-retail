@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="custom_pos_receipt.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('pos-receipt-contact')]" position="inside">
+            <t t-if='receiptData.receipt.client'>
+                <div>Client:
+                    <t t-esc='receiptData.receipt.client.name'/>
+                    <t t-esc='receiptData.receipt.client.mobile'/>
+                    <t t-esc='receiptData.receipt.client.vat'/>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>
