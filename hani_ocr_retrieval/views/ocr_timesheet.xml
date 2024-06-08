@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- OCR timesheet tree view -->
+    <record id="ocr_timesheet_view_tree" model="ir.ui.view">
+        <field name="name">ocr.timesheet.view.tree</field>
+        <field name="model">ocr.timesheet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!-- OCR timesheet form view -->
+    <record id="ocr_timesheet_view_form" model="ir.ui.view">
+        <field name="name">ocr.timesheet.view.form</field>
+        <field name="model">ocr.timesheet</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="badge_number"/>
+                            <field name="division"/>
+                            <field name="cost_center"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- OCR timesheet view action-->
+    <record id="ocr_timesheet_action" model="ir.actions.act_window">
+        <field name="name">OCR Timesheet</field>
+        <field name="res_model">ocr.timesheet</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- OCR Timesheet menu -->
+    <menuitem id="ocr_timesheet_menu"
+              name="OCR Timesheet"
+              parent="mail.mail_menu_technical"
+              action="ocr_timesheet_action"
+              sequence="57"/>
+</odoo>
